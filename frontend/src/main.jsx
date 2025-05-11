@@ -9,7 +9,7 @@ import {
 } from '@apollo/client';
 
 const client = new ApolloClient({
-  uri: "http://gbwebsite.liveblog365.com/backend/public/index.php/graphql",
+  uri: "http://example/index.php/graphql",
   cache: new InMemoryCache(),
 });
 
