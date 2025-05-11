@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+}
+
+.nav {
+  background-color: hsl(0, 0%, 96%);
+  color: hsl(0, 0%, 16%);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 2rem;
+  position: relative;
+  height: 8vh;
+  z-index: 1001;
+  border-bottom: none;
+  box-shadow: none;
+}
+
+
+.left-section {
+  display: flex;
+  align-items: center;
+}
+
+
+.burger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.burger span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: hsl(0, 0%, 16%);
+  border-radius: 2px;
+}
+
+
+.nav-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 2rem;
+}
+
+
+.nav a,
+.nav-link {
+  text-decoration: none;
+  color: inherit;
+  font-size: 1.5rem;
+  position: relative;
+  transition: color 0.3s;
+}
+
+.nav a:hover,
+.nav-link:hover,
+.cart-icon:hover,
+.logo:hover {
+  color: hsl(84, 100%, 59%);
+}
+
+
+.nav-link.active::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background-color: hsl(84, 100%, 59%);
+  border-radius: 2px;
+}
+
+
+.logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 2.2rem;
+  color: green;
+  display: flex;
+  align-items: center;
+}
+
+
+.cart-icon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 26px;
+  position: relative;
+}
+
+.icon-wrapper {
+  position: relative;
+}
+
+.cart-bubble {
+  position: absolute;
+  top: -6px;
+  right: -10px;
+  background: black;
+  color: white;
+  font-size: 11px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav-links {
+    width: 100%;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background: hsl(0, 0%, 95%);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #ddd;
+    display: none; 
+    flex-direction: column;
+    padding: 1rem;
+    z-index: 5;
+  }
+
+  body.nav-open .nav-links {
+    display: flex; 
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  .logo {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
